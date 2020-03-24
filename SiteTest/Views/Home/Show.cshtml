@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Data Table</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" ng-app="Create" ng-controller="Controller">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">User Name</th>
+                                <th scope="col">Password</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="e in record">
+                                <td>{{e.ID}}</td>
+                                <td>{{e.UserName}}</td>
+                                <td>{{e.Password}}</td>
+                                <td><a href="/Home/Update?id={{e.ID}}">Update</a></td>
+                                <td><a ng-click="deleterecord(e.ID)">Delete</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+
